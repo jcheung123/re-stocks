@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './StockContainer.css'
 
+require('dotenv').config()
+const key = process.env.REACT_APP_API_KEY;
+
 
 function StockContainer(props) {
 
   const [stockProfile, setStockProfile] = useState({
+    c: '',
     logo: '',
     ticker: '',
     name: '',
@@ -13,24 +17,55 @@ function StockContainer(props) {
     finnhubIndustry: '',
   });
 
+
   useEffect(() => {
 
-    const url = `https://finnhub.io/api/v1/stock/profile2?`+`symbol=${props.ticker}&token=ca4l2laad3ibhjmjo6bg`;
+    const urls = [
+      `https://finnhub.io/api/v1/stock/profile2?` + `symbol=${props.ticker}&token=${key}`,
+      `https://finnhub.io/api/v1/quote?` + `symbol=${props.ticker}&token=${key}`
+    ];
 
-    const requestCompanyProfile = {
-      method: "GET"
+    let stockData = {}
+    Promise.all(
+      urls.map((url) =>
+        fetch(url)
+          .then((response) => {
+            return response.json()
+          })
+          .then((responseData) => {
+            stockData = {...stockData, ...responseData}
+            return stockProfile
+          })
+          .catch((error) => console.log("There was a problem!", error))
+      ),
+      []
+    ).then(() => {
+       setStockProfile(stockData)
+      //  method: "POST"
+    });
+  }, [props.ticker]);
+
+  const addThisStock = (stockProfile) => {
+    const newWatchlist = [...props.watchlist]
+    if (!props.watchlist.includes(stockProfile.ticker)) {
+      newWatchlist.push(stockProfile.ticker)
     }
+    props.setWatchlist(newWatchlist)
+  }
 
-    fetch(url, requestCompanyProfile)
-    .then((response) => {
-      return response.json()
-    })
-    .then((responseData) => {
-      setStockProfile(responseData)
-      return stockProfile
-    })
-
-  },[props.ticker])
+  // invalid tickers
+  if (!stockProfile.ticker) {
+    return (
+    <div className="card-columns"> 
+      <div className="card bg-light">
+        <div className="card-body text-center">
+            <h4>  
+              Ticker not found.
+            </h4> 
+        </div>
+      </div>
+  </div>
+  )} else
 
   return (
       <div className="card-columns"> 
@@ -41,16 +76,20 @@ function StockContainer(props) {
                 <img className="logo__img" src={stockProfile.logo} alt="logo" /> 
                   {stockProfile.ticker}
               </h2> 
+              <h3>{stockProfile.c}</h3>
               <h4>{stockProfile.name}</h4>
               <p>{stockProfile.exchange}</p>
               <p>Market Cap: {stockProfile.marketCapitalization} </p>
               <p>{stockProfile.finnhubIndustry}</p>
+              <button 
+                onClick={() => addThisStock(stockProfile)}
+                type="button" class="btn btn-primary">Add to WatchList
+              </button>
             </p>
           </div>
         </div>
       </div>
   );
-
 }
 
 export default StockContainer

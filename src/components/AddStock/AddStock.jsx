@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {BsSearch} from 'react-icons/bs';
 
 
 function AddStock(props) {
@@ -15,18 +16,20 @@ function AddStock(props) {
 
     return (
         <div>
+            <h6>Search Stock</h6>
             <form action="/" method="post">
                 <div className="input-group rounded">
                     <input type="text" 
                     value={tickerInput}
-                    className="form-control rounded" placeholder="Add Stock" aria-label="Search" aria-describedby="search-addon"
+                    className="form-control-lg rounded" placeholder="Add Stock" aria-label="Search" aria-describedby="search-addon"
                     onChange={handleInputChange}
                     >
                     </input>
-                    <input onClick={searchCallBack} type="submit" value="Submit"></input>
+                    <button onClick={searchCallBack}  type="button" className="btn btn-outline-primary btn-lg">
+                        <BsSearch />
+                    </button>
                 </div>
             </form>
-
         </div> 
     );
 }

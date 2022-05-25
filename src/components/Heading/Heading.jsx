@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Heading(props) {
+function Heading() {
     return (
         <div>
             <h1 className="mt-4">Welcome, UserName</h1>
