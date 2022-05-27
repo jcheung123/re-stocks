@@ -41,7 +41,6 @@ function StockContainer(props) {
       []
     ).then(() => {
        setStockProfile(stockData)
-      //  method: "POST"
     });
   }, [props.ticker]);
 
@@ -51,7 +50,9 @@ function StockContainer(props) {
       newWatchlist.push(stockProfile.ticker)
     }
     props.setWatchlist(newWatchlist)
+    // postRequestFunction('/portfolio')
   }
+
 
   // invalid tickers
   if (!stockProfile.ticker) {
@@ -68,7 +69,7 @@ function StockContainer(props) {
   )} else
 
   return (
-      <div className="card-columns"> 
+    <div className="col-sm-6 col-md-4">
         <div className="card bg-light">
           <div className="card-body text-center">
             <p className="card-text">
@@ -81,14 +82,15 @@ function StockContainer(props) {
               <p>{stockProfile.exchange}</p>
               <p>Market Cap: {stockProfile.marketCapitalization} </p>
               <p>{stockProfile.finnhubIndustry}</p>
-              <button 
-                onClick={() => addThisStock(stockProfile)}
-                type="button" class="btn btn-primary">Add to WatchList
-              </button>
+                <button 
+                  onClick={() => addThisStock(stockProfile)}
+                  name="addStock"
+                  type="button" class="btn btn-primary">Add to WatchList
+                </button>
             </p>
           </div>
         </div>
-      </div>
+    </div>
   );
 }
 

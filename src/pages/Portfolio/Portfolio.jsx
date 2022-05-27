@@ -1,11 +1,12 @@
 import React from 'react';
+import Stats from '../.././components/Stats/Stats';
 import WatchList from '../.././components/Watchlist/Watchlist';
 
 const Portfolio = (props) => {
 
   return (
     <div>
-        <h1 className="mt-4">Username's Stock Portfolio</h1>
+        <Stats />
         <WatchList {...props} />
     </div>
   );

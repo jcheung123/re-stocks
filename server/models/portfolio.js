@@ -2,21 +2,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const userSchema = new Schema({
-    name: String,
-    email: {type: String, required: true, lowercase: true, unique: true},
-    password: String
-}, {
-    timestamps: true
-});
-
 const portfolioSchema = new Schema({
-    user: userSchema,
-    description: String,
-    watchlist: [{type: Schema.Types.ObjectId, ref: 'Stock'}],
+    logo: String,
+    ticker: String,
+    name: String,
+    exchange: String,
+    marketCapitalization: Number,
+    finnhubIndustry: String
 }, {
-    timestamps: true
-});
-
+    timestamp: true
+})
 
 module.exports = mongoose.model('Portfolio', portfolioSchema)

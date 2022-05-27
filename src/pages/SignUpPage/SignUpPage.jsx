@@ -1,14 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import './SignUpPage.css'
+import SignupForm from '../../components/SignupForm/SignupForm';
 
-const SignUpPage = () => {
 
-  return (
-    <div>
-      <p>This is the SIGNUP Page</p>
-    </div>
-  );
+class SignupPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {message: ''}
+  }
 
-};
+  updateMessage = (msg) => {
+    this.setState({message: msg});
+  }
 
-export default SignUpPage;
+  render() {
+    return (
+      <div className='SignupPage'>
+        <SignupForm {...this.props} updateMessage={this.updateMessage} />
+        <p>{this.state.message}</p>
+      </div>
+    );
+  }
+}
+
+export default SignupPage;

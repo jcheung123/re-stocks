@@ -4,8 +4,9 @@ import React from 'react';
 function Heading() {
     return (
         <div>
-            <h1 className="mt-4">Welcome, UserName</h1>
-            <p>Welcome to React Stocks, Create your Custom Portfolio Now!</p>
+            <h1 className="mt-4">Welcome to React Stocks</h1>
+            <h4> Create your Custom Portfolio Now!</h4>
+            <br /><br /><br />
         </div>
     );
   }
