@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
+import { useLocation } from 'react-router-dom';
 import './StockContainer.css'
 
 require('dotenv').config()
@@ -6,6 +7,8 @@ const key = process.env.REACT_APP_API_KEY;
 
 
 function StockContainer(props) {
+
+  const location = useLocation();
 
   const [stockProfile, setStockProfile] = useState({
     c: '',
@@ -50,7 +53,17 @@ function StockContainer(props) {
       newWatchlist.push(stockProfile.ticker)
     }
     props.setWatchlist(newWatchlist)
+    alert('stock added to watchlist')
     // postRequestFunction('/portfolio')
+  }
+
+  const removeThisStock = (stockProfile) => {
+    const newWatchlist = [...props.watchlist]
+    if (newWatchlist.length > 0) {
+      newWatchlist.splice(stockProfile, 1)
+    }
+    props.setWatchlist(newWatchlist)
+    alert('stock removed from watchlist')
   }
 
 
@@ -82,11 +95,23 @@ function StockContainer(props) {
               <p>{stockProfile.exchange}</p>
               <p>Market Cap: {stockProfile.marketCapitalization} </p>
               <p>{stockProfile.finnhubIndustry}</p>
-                <button 
-                  onClick={() => addThisStock(stockProfile)}
-                  name="addStock"
-                  type="button" class="btn btn-primary">Add to WatchList
-                </button>
+
+              {location.pathname === "/"  ?
+                <div>
+                  <button 
+                    onClick={() => addThisStock(stockProfile)} 
+                    name="addStock"
+                    type="button" class="btn btn-primary">Add to WatchList
+                  </button>  &nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                  <button 
+                    onClick={() => removeThisStock(stockProfile)}
+                    name="removeStock"
+                    type="button" class="btn btn-primary">Remove
+                  </button>
+                </div>
+                : ''
+                }
             </p>
           </div>
         </div>
