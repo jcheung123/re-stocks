@@ -1,115 +1,46 @@
-React Stocks
---------------------------
+# Re-Stocks: A Stocks Watchlist Portfolio made with React
+Many users, including myself have trouble staying organized with the different stocks they want for different investing purposes. Now, with Re-Stocks, users have the creativity to keep track of different stocks in a personal portfolio; and have the ability to save company profiles, real-time market data, and preview historical trends.
 
-Idea: 
-- Create front end layout 
-- Implement API
-- Routes to porfolio page, home page
-- Stocks and Users model
 
-General Users - 
-Allowed to view and search different stocks with real time information.
+## User Stories
 
-Authenticated Users - 
-Allowed to create portfolio, add to portfolio and delete.
+General Users - Allowed to view and search different stocks with real time information.
 
-Technologies Used
+Authenticated Users - In additional to general user functionality, users are allowed to create portfolio, add to portfolio and delete stocks.
+
+
+## App Images
+
+Landing Page
+<img src = /appImages/landing.png>
+
+Portfolio Page
+<img src = /appImages/portfolio.png>
+
+
+## Relationship Modelling - ERD
+
+<img src = /appImages/relationships.png>
+
+
+## Technologies Used
 - React
-- MongoDB
 - NodeJS
 - ExpresJS
+- MongoDB
 - JWT Authentication
 - Finnub API
 
-Future Steps
-- Allow logged in users to add the number of shares they wish to have in their porfolio
-  (percentage of different stocks in various sectors)
-- Generate stats page based on what you have in your portfolio 
-- Allow users to create more portfolios for different investing purposes (have to update models)
 
+## Next Steps/Icebox Items
+1. Allow logged in users to add the number of shares they wish to have in their porfolio (percentage of different stocks in various sectors)
+2. Generate stats page based what users have in their portfolio 
+3. Allow users to create different portfolios for different investing purposes (have to update models)
+4. Styling of the app
+  
+## Accessing the App/Contributions 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Clone this repo and register for an API key from https://finnhub.io/.
+- Create a `.env` file and add the following keys: `DATABASE_URL`, `REACT_APP_API_KEY`, and `SECRET`.
+- Run `npm i`, then `npm run build`
+- Start the app in separate terminals by running `npm run start` and `nodemon server`, respectively.
