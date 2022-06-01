@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
+import Accordion from 'react-bootstrap/Accordion'
+import {IoIosArrowDown} from 'react-icons/io'
 import './StockContainer.css'
 
 require('dotenv').config()
@@ -12,12 +14,18 @@ function StockContainer(props) {
 
   const [stockProfile, setStockProfile] = useState({
     c: '',
+    h: '',
+    l: '',
+    o: '',
+    pc: '',
+    dp: '',
     logo: '',
     ticker: '',
     name: '',
     exchange: '',
     marketCapitalization: '',
     finnhubIndustry: '',
+    weburl: ''
   });
 
 
@@ -82,7 +90,7 @@ function StockContainer(props) {
   )} else
 
   return (
-    <div className="col-sm-6 col-md-4">
+    <div className="col-sm-6 col-md-4 ">
         <div className="card bg-light">
           <div className="card-body text-center">
             <p className="card-text">
@@ -90,7 +98,7 @@ function StockContainer(props) {
                 <img className="logo__img" src={stockProfile.logo} alt="logo" /> 
                   {stockProfile.ticker}
               </h2> 
-              <h3>{stockProfile.c}</h3>
+              <h3 className="text-primary">{stockProfile.c}</h3>
               <h4>{stockProfile.name}</h4>
               <p>{stockProfile.exchange}</p>
               <p>Market Cap: {stockProfile.marketCapitalization} </p>
@@ -112,6 +120,20 @@ function StockContainer(props) {
                 </div>
                 : ''
                 }
+                {/* // toggle collapse section */}
+                <Accordion defaultActiveKey="0">
+                  <Accordion.Item eventKey="1">
+                    <Accordion.Header headerstyle={{height: "10px", width: "10px", border: 'none'}}> <IoIosArrowDown /> </Accordion.Header>
+                    <Accordion.Body>
+                      HIGH: {stockProfile.h} <br/>
+                      LOW: {stockProfile.l} <br/>
+                      OPEN: {stockProfile.o} <br/>
+                      PREVIOUS CLOSE: {stockProfile.pc} <br/>
+                      PERCENT CHANGE: {stockProfile.dp} <br />
+                      <a href={stockProfile.weburl}>{stockProfile.weburl}</a>
+                    </Accordion.Body>
+                  </Accordion.Item> 
+                </Accordion>
             </p>
           </div>
         </div>

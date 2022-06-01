@@ -16,7 +16,7 @@ function AddStock(props) {
 
     return (
         <div>
-            <h6>Search Stock</h6>
+            <h6 style={{color: "white"}}>Search Stock</h6>
             <form action="/" method="post">
                 <div className="input-group rounded">
                     <input type="text" 

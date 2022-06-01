@@ -5,8 +5,8 @@ import WatchList from '../.././components/Watchlist/Watchlist';
 const Portfolio = (props) => {
 
   return (
-    <div>
-        <Stats />
+    <div> 
+        {/* <Stats /> */}
         <WatchList {...props} />
     </div>
   );

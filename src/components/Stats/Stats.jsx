@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import StockContainer from '../StockContainer/StockContainer'
+// import React, {useState} from 'react';
+// import StockContainer from '../StockContainer/StockContainer'
 
 
 
-function Stats() {
+// function Stats() {
 
     // const [stats, setStats] = useState('');
 
@@ -12,14 +12,14 @@ function Stats() {
 
 
     
-    return (
-        <div>
-            <h1 className="mt-4">Stats Overview</h1>
-            <p>This is where the stats will go</p>
-            <br />
-            <br />
-        </div>
-    );
-  }
+//     return (
+//         <div>
+//             <h1 className="mt-4">Stats Overview</h1>
+//             <p>This is where the stats will go</p>
+//             <br />
+//             <br />
+//         </div>
+//     );
+//   }
 
-export default Stats
+// export default Stats

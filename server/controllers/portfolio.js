@@ -2,7 +2,17 @@
 const Portfolio = require('../models/portfolio');
 
 
-
+async function getAllStocks (req, res) {
+    const allStocks = await Portfolio.find({})
+    try {
+        res.send({
+            status: 200,
+            data: allStocks
+         })
+    } catch (err) {
+        res.json({err});
+    }   
+}
 
 async function addStock (req, res) {
     await Portfolio.create(req.body)
@@ -29,7 +39,7 @@ async function removeStock (req, res) {
 
 
 module.exports = {
-
+    getAllStocks,
     addStock,
     removeStock
 }

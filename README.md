@@ -1,3 +1,48 @@
+React Stocks
+--------------------------
+
+Idea: 
+- Create front end layout 
+- Implement API
+- Routes to porfolio page, home page
+- Stocks and Users model
+
+General Users - 
+Allowed to view and search different stocks with real time information.
+
+Authenticated Users - 
+Allowed to create portfolio, add to portfolio and delete.
+
+Technologies Used
+- React
+- MongoDB
+- NodeJS
+- ExpresJS
+- JWT Authentication
+- Finnub API
+
+Future Steps
+- Allow logged in users to add the number of shares they wish to have in their porfolio
+  (percentage of different stocks in various sectors)
+- Generate stats page based on what you have in your portfolio 
+- Allow users to create more portfolios for different investing purposes (have to update models)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

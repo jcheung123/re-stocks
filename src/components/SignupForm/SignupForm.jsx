@@ -39,7 +39,7 @@ class SignupForm extends Component {
   render() {
     return (
       <div>
-        <h1 className="header-footer">Sign Up</h1>
+        <h1 className="header-footer" style={{color: "white"}}>Sign Up</h1>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
           <div className="form-group">
             <div className="col-form-label-lg">

@@ -5,3 +5,18 @@
     width:65px;
     height:65px;
 }
+
+h1, h4, p {
+    color: black;
+}
+
+.accordion-button {
+    border: none;
+    font-size: 25px;
+    margin-right: 40px;
+    outline: none;
+}
+
+*:focus {
+    outline: 0 !important;
+}
