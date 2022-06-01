@@ -12,21 +12,21 @@ Authenticated Users - In additional to general user functionality, users are all
 ## App Images
 
 Landing Page
-<img src = /appImages/landing.png>
+<img src = "/appImages/landing.png">
 
 Portfolio Page
-<img src = /appImages/portfolio.png>
+<img src = "/appImages/portfolio.png">
 
 
 ## Relationship Modelling - ERD
 
-<img src = /appImages/relationships.png>
+<img src = "/appImages/relationships.png">
 
 
 ## Technologies Used
 - React
 - NodeJS
-- ExpresJS
+- ExpressJS
 - MongoDB
 - JWT Authentication
 - Finnub API
@@ -40,7 +40,7 @@ Portfolio Page
   
 ## Accessing the App/Contributions 
 
-- Clone this repo and register for an API key from https://finnhub.io/.
-- Create a `.env` file and add the following keys: `DATABASE_URL`, `REACT_APP_API_KEY`, and `SECRET`.
+- Clone this repo and register for an API key from https://finnhub.io/
+- Create a `.env` file and add the following keys: `DATABASE_URL`, `REACT_APP_API_KEY`, and `SECRET`
 - Run `npm i`, then `npm run build`
-- Start the app in separate terminals by running `npm run start` and `nodemon server`, respectively.
+- Start the app in separate terminals by running `npm run start` and `nodemon server`, respectively
