@@ -1,4 +1,4 @@
-# Re-Stocks: A Stocks Watchlist Portfolio made with React
+# Re-Stocks: A Stocks Watchlist Portfolio made with React 📈
 Many users, including myself have trouble staying organized with the different stocks they want for different investing purposes. Now, with Re-Stocks, users have the creativity to keep track of different stocks in a personal portfolio; and have the ability to save company profiles, real-time market data, and preview historical trends.
 
 
@@ -9,18 +9,20 @@ General Users - Allowed to view and search different stocks with real time infor
 Authenticated Users - In additional to general user functionality, users are allowed to create portfolio, add to portfolio and delete stocks.
 
 
-## App Images
+## App Screenshots
 
-Landing Page
-<img src = "/appImages/landing.png">
+### Landing Page
 
-Portfolio Page
-<img src = "/appImages/portfolio.png">
+<img src = "/public/appImages/landing.png">
+
+### Portfolio Page
+
+<img src = "/public/appImages/portfolio.png">
 
 
 ## Relationship Modelling - ERD
 
-<img src = "/appImages/relationships.png">
+<img src = "/public/appImages/relationships.png">
 
 
 ## Technologies Used
